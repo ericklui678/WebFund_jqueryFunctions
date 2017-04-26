@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Functions</title>
+        <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#clickButton').click(function(){
+                alert("Welcome!");
+            });
+            $('#hideButton').click(function(){
+                $('#dispPara').hide();
+            });
+            $('#showButton').click(function(){
+                $('#dispPara').show();
+            });
+            $('#toggleButton').click(function(){
+                $('#togglePara').toggle();
+            });
+            $('#slideDownButton').click(function(){
+                $('#slideDownPara').hide(); // hide paragraph
+                $('#slideDownPara').slideDown(function(){}); // show slide
+            });
+            $('#slideUpButton').click(function(){
+                $('#slideUpPara').show(); // hide paragraph
+                $('#slideUpPara').slideUp(function(){}); // slide from up to hide
+            });
+            $('.pogchamp').hide();  // image starts as hidden when page loaded
+            $('#slideToggleButton').click(function(){
+                $('#slideChamp').slideToggle(function(){});
+            });
+            $('#fadeInButton').click(function(){
+                $('#fadeInChamp').hide();  // image starts as hidden when page loaded
+                $('#fadeInChamp').fadeIn();
+            });
+            $('#fadeOutChamp').show();  // image starts as hidden when page loaded
+            $('#fadeOutButton').click(function(){
+                $('#fadeOutChamp').show();  // image starts as hidden when page loaded
+                $('#fadeOutChamp').fadeOut();
+            });
+            $('#addClassButton').click(function(){
+                $('#redParaID').addClass("redPara");
+            });
+            $('#beforeButton').click(function(){
+                $('#beforePara').before("BEFORE: ");
+            });
+            $('#afterButton').click(function(){
+                $('#afterPara').after("AFTER: ");
+            });
+            $('#appendButton').click(function(){
+                $('#appendPara').append(" <p>Append</p> ");
+            });
+            $('#htmlButton').click(function(){
+                $('#htmlPara').html("<h3> h3 header HTML inserted here</h3>");
+            });
+            $('#attrButton').click(function(){
+                $("#google").attr("href","https://bing.com");
+            });
+            $('#valButton').click(function(){
+                $("input:text").val("Enter username");
+            });
+            $('#textButton').click(function(){
+                $("#textPara").text("Text has now been changed");
+            });
+
+            $('#dataStoreButton').click(function(){
+                $("#dataPara").data("greeting","Welcome to my website");
+            });
+            $('#dataOutputButton').click(function(){
+                alert($("#dataPara").data("greeting"));
+            });
+        });
+    </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="funcBox">
+                <h1>Click</h1>
+                <button id="clickButton">Click</button>
+                <p>Click the button to show a friendly greeting alert</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>Hide and Show</h1>
+                <button id="hideButton">Hide</button>
+                <button id="showButton">Show</button>
+                <p id="dispPara">Click the buttons to hide/show paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>Toggle</h1>
+                <button id="toggleButton">Toggle</button>
+                <p id="togglePara">Click the button toggle paragraph visibility</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>slideDown</h1>
+                <button id="slideDownButton">slideDown</button>
+                <p id="slideDownPara">Click the button to slide down the paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>slideUp</h1>
+                <button id="slideUpButton">slideUp</button>
+                <p id="slideUpPara">Click the button to slide up the paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>slideToggle</h1>
+                <button id="slideToggleButton">slideToggle</button>
+                <p>Click the button to toggle a hidden image</p>
+                <img id="slideChamp" class="pogchamp" src="./images/pogchamp.png">
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>fadeIn</h1>
+                <button id="fadeInButton">fadeIn</button>
+                <p>Click the button fade in an image</p>
+                <img id="fadeInChamp" class="pogchamp" src="./images/pogchamp.png">
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>fadeOut</h1>
+                <button id="fadeOutButton">fadeOut</button>
+                <p>Click the button fade out an image</p>
+                <img id="fadeOutChamp" class="pogchamp" src="./images/pogchamp.png">
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>addClass</h1>
+                <button id="addClassButton">addClassButton</button>
+                <p id="redParaID">Click the button to add class 'red' to this paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>before</h1>
+                <button id="beforeButton">before</button>
+                <p id="beforePara">Click the button to add text before paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>after</h1>
+                <button id="afterButton">after</button>
+                <p id="afterPara">Click the button to add text after paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>append</h1>
+                <button id="appendButton">append</button>
+                <p id="appendPara">Click the button to append to paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>html</h1>
+                <button id="htmlButton">html</button>
+                <p id="htmlPara">Click the button to add HTML to paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>attr</h1>
+                <button id="attrButton">attr</button>
+                <a href="https://google.com" id="google">Click the attr button to redirect Google link to Bing</a>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>val</h1>
+                <button id="valButton">val</button>
+                <p>Click the button to output text to input box</p>
+                <input type="text">
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>text</h1>
+                <button id="textButton">text</button>
+                <p id="textPara">Click the button to set text of paragraph</p>
+            </div> <!-- funcBox end -->
+            <div class="funcBox">
+                <h1>data</h1>
+                <button id="dataStoreButton">store</button>
+                <button id="dataOutputButton">output</button>
+                <p id="dataPara">Click the buttons to store and output greeting</p>
+            </div> <!-- funcBox end -->
+        </div> <!-- wrapper end -->
+    </body>
+</html>
